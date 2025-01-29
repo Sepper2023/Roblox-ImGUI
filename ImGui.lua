@@ -1149,7 +1149,8 @@ function ImGui:Dropdown(Config)
 	if not Parent then return end
 
 	local Selection: ScrollingFrame = Prefabs.Selection:Clone()
-	Selection.ZIndex = 99999
+	Selection.ZIndex = 9999
+	
 	local UIStroke = Selection:FindFirstChildOfClass("UIStroke")
 
 	local Padding = UIStroke.Thickness*2
@@ -1195,6 +1196,8 @@ function ImGui:Dropdown(Config)
 		local NewItem: TextButton = ItemTemplate:Clone()
 		NewItem.Text = tostring(Value)
 		NewItem.Parent = Selection
+		NewItem.ZIndex = 9999
+		
 		NewItem.Visible = true
 		NewItem.Activated:Connect(function()
 			return SetValue(Value)
