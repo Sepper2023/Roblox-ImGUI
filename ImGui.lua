@@ -1149,6 +1149,7 @@ function ImGui:Dropdown(Config)
 	if not Parent then return end
 
 	local Selection: ScrollingFrame = Prefabs.Selection:Clone()
+	Selection.ZIndex = 99999
 	local UIStroke = Selection:FindFirstChildOfClass("UIStroke")
 
 	local Padding = UIStroke.Thickness*2
